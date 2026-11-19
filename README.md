@@ -1,6 +1,6 @@
 # Project 300: Secure Banking Network
 
-> **Status:** Planning & Build Phase — Year 3, Semester 1 (ATU Sligo)  
+> **Status:** Planning & Build Phase — Year 3, Semester 1 
 > **Role:** Sole Network Lead (Team of 4)
 
 ## Overview
