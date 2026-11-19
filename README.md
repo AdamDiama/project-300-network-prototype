@@ -25,6 +25,3 @@ Designing and building a multi-VLAN network connected to a hardened back-end dat
 - [ ] Physical rack build and cabling
 - [ ] Switch, router, and firewall configuration
 - [ ] Virtualised server deployment, backend integration, and connectivity testing
-
-## Author
-- **Adam Diamantidis** — BSc (Hons) in Computer Networks & Cybersecurity, ATU Sligo
