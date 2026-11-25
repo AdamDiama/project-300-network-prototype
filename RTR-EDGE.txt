@@ -1,0 +1,65 @@
+! ============================================================
+! RTR-EDGE - Cisco 2911 - Edge router, default route, OSPF
+! Project 300 - Networking
+!
+! HOW TO USE
+!   1. Open the device CLI, then: enable
+!   2. configure terminal
+!   3. Paste everything between BEGIN and END
+!   4. Generate the SSH key and finish line config (end of file)
+!
+! NOTE: Passwords are placeholders (Cisco123!). Change them.
+! ============================================================
+! ---------------------- BEGIN ----------------------
+hostname RTR-EDGE
+no ip domain-lookup
+ip domain-name bank.local
+enable secret Cisco123!
+username admin privilege 15 secret Cisco123!
+!
+interface loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface gi0/0
+ description To FW-01
+ ip address 10.0.2.1 255.255.255.252
+ no shutdown
+!
+interface gi0/1
+ description To RTR-CORE
+ ip address 10.0.1.1 255.255.255.252
+ ip ospf network point-to-point
+ no shutdown
+!
+! Default route toward the firewall
+ip route 0.0.0.0 0.0.0.0 10.0.2.2
+!
+router ospf 1
+ router-id 1.1.1.1
+ passive-interface default
+ no passive-interface gi0/1
+ network 10.0.1.0 0.0.0.3 area 0
+ network 1.1.1.1 0.0.0.0 area 0
+ default-information originate
+!
+end
+! ----------------------- END -----------------------
+!
+! SSH SETUP (run by hand after the paste above)
+!   configure terminal
+!   crypto key generate rsa      <- Packet Tracer: enter 2048 when asked
+!   ip ssh version 2
+!   line con 0
+!    logging synchronous
+!   line vty 0 15
+!    transport input ssh
+!    login local
+!   end
+!   write memory
+!
+! VERIFY
+!   show ip interface brief
+!   show ip ospf neighbor        (RTR-CORE should be FULL)
+!   show ip route                (static default + OSPF VLAN routes)
+!
+! NOTE: Gi0/0 stays down until FW-01 is cabled and configured.
