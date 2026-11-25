@@ -3,9 +3,13 @@
 > A segmented, secured network for a small banking environment, prototyped in Cisco Packet Tracer and designed to be rebuilt on a single physical rack.
 
 **Module:** Project 300
+
 **Role documented here:** Networking (routing, switching, segmentation, perimeter)
+
 **Team:** Networking: *Adam* | Windows Administration: *Colin* | Database: *Thomas* | Network Security / RADIUS: *Tyler*
+
 **Tool:** Cisco Packet Tracer 8.x
+
 **Status:** Prototype complete and tested (see [Limitations](#10-limitations-and-honest-scope))
 
 ---
