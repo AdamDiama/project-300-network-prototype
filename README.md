@@ -4,7 +4,7 @@
 
 **Module:** Project 300
 **Role documented here:** Networking (routing, switching, segmentation, perimeter)
-**Team:** Networking: *[your name]* | Windows Administration: *[name]* | Database: *[name]* | Network Security / RADIUS: *[name]*
+**Team:** Networking: *Adam* | Windows Administration: *Colin* | Database: *Thomas* | Network Security / RADIUS: *Tyler*
 **Tool:** Cisco Packet Tracer 8.x
 **Status:** Prototype complete and tested (see [Limitations](#10-limitations-and-honest-scope))
 
